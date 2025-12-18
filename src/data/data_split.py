@@ -23,7 +23,8 @@ def data_split():
         X, y, test_size=0.25, random_state=42
     )
 
-    outDir = projDir / "data/processed"
+    outDir = projDir / "data/processed/split"
+    outDir.mkdir(parents=True, exist_ok=True)
     X_train.to_csv(outDir / "X_train.csv", index=False)
     X_test.to_csv(outDir / "X_test.csv", index=False)
     y_train.to_csv(outDir / "y_train.csv", index=False)
@@ -31,7 +32,7 @@ def data_split():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='%(levelname)s: %(message)s',
     )
 

@@ -14,8 +14,8 @@ def training():
     projDir = Path(__file__).absolute().parent.parent.parent
     
     processedDir = projDir / "data/processed"
-    X_trainFile = processedDir / "X_train_scaled.csv"
-    y_trainFile = processedDir / "y_train.csv"
+    X_trainFile = processedDir / "scaled" / "X_train_scaled.csv"
+    y_trainFile = processedDir / "split" / "y_train.csv"
     logging.debug(f"Input: {X_trainFile=}")
     logging.debug(f"Input: {y_trainFile=}")
 
@@ -40,7 +40,7 @@ def training():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='%(levelname)s: %(message)s',
     )
 

@@ -13,9 +13,9 @@ from sklearn.preprocessing import StandardScaler
 def normalize():
     projDir = Path(__file__).absolute().parent.parent.parent
 
-    processedDir = projDir / "data/processed"
-    trainDataFile = processedDir / "X_train.csv"
-    testDataFile = processedDir / "X_test.csv"
+    splitDir = projDir / "data/processed/split"
+    trainDataFile = splitDir / "X_train.csv"
+    testDataFile = splitDir / "X_test.csv"
     logging.debug(f"Input: {trainDataFile=}")
     logging.debug(f"Input: {testDataFile=}")
 
@@ -32,8 +32,10 @@ def normalize():
     X_train_scaled = pd.DataFrame(X_train_scaled, columns=X_train.columns)
     X_test_scaled = pd.DataFrame(X_test_scaled, columns=X_train.columns)
 
-    trainDataScaledFile = processedDir / "X_train_scaled.csv"
-    testDataScaledFile = processedDir / "X_test_scaled.csv"
+    scaledDir = projDir / "data/processed/scaled"
+    scaledDir.mkdir(parents=True, exist_ok=True)
+    trainDataScaledFile = scaledDir / "X_train_scaled.csv"
+    testDataScaledFile = scaledDir / "X_test_scaled.csv"
     logging.debug(f"Output: {trainDataScaledFile=}")
     logging.debug(f"Output: {testDataScaledFile=}")
 
@@ -42,7 +44,7 @@ def normalize():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='%(levelname)s: %(message)s',
     )
 

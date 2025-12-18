@@ -1,6 +1,0 @@
-outs:
-- md5: 329ba011715e8560b7e75b6d1a4f9d5e.dir
-  size: 8475
-  nfiles: 1
-  hash: md5
-  path: predicted

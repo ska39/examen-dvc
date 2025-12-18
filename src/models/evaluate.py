@@ -18,8 +18,8 @@ def evaluate():
     projDir = Path(__file__).absolute().parent.parent.parent
 
     processedDir = projDir / "data/processed"
-    X_testFile = processedDir / "X_test_scaled.csv"
-    y_testFile = processedDir / "y_test.csv"
+    X_testFile = processedDir / "scaled" / "X_test_scaled.csv"
+    y_testFile = processedDir / "split"/ "y_test.csv"
     logging.debug(f"Input: {X_testFile=}")
     logging.debug(f"Input: {y_testFile=}")
 
@@ -52,7 +52,7 @@ def evaluate():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='%(levelname)s: %(message)s',
     )
 

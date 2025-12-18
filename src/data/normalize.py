@@ -37,8 +37,8 @@ def normalize():
     logging.debug(f"Output: {trainDataScaledFile=}")
     logging.debug(f"Output: {testDataScaledFile=}")
 
-    X_train_scaled.to_csv(trainDataScaledFile)
-    X_test_scaled.to_csv(testDataScaledFile)
+    X_train_scaled.to_csv(trainDataScaledFile, index=False)
+    X_test_scaled.to_csv(testDataScaledFile, index=False)
 
 
 if __name__ == "__main__":

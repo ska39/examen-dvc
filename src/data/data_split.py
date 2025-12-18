@@ -24,10 +24,10 @@ def data_split():
     )
 
     outDir = projDir / "data/processed"
-    X_train.to_csv(outDir / "X_train.csv")
-    X_test.to_csv(outDir / "X_test.csv")
-    y_train.to_csv(outDir / "y_train.csv")
-    y_test.to_csv(outDir / "y_test.csv")
+    X_train.to_csv(outDir / "X_train.csv", index=False)
+    X_test.to_csv(outDir / "X_test.csv", index=False)
+    y_train.to_csv(outDir / "y_train.csv", index=False)
+    y_test.to_csv(outDir / "y_test.csv", index=False)
 
 
 if __name__ == "__main__":
